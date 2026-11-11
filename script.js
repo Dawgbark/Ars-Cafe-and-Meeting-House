@@ -1,11 +1,8 @@
 
-/* GitHub Cafe Images */
+/* Cafe Images */
 
-const dayImage =
-  "https://raw.githubusercontent.com/Dawgbark/Ars-Cafe-and-Meeting-House/main/Day-Time%20Cafe.png";
-
-const nightImage =
-  "https://raw.githubusercontent.com/Dawgbark/Ars-Cafe-and-Meeting-House/main/Night-Time%20Cafe.png";
+const dayImage = "./Day-Time%20Cafe.png";
+const nightImage = "./Night-Time%20Cafe.png";
 
 /* Cafe Menu Items */
 
