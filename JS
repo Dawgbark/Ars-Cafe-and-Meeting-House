@@ -1,0 +1,186 @@
+
+/* GitHub Cafe Images */
+
+// Replace USERNAME and REPOSITORY
+// with your actual GitHub information.
+
+const dayImage =
+  "https://raw.githubusercontent.com/USERNAME/REPOSITORY/main/Day-Time%20Cafe.jpg";
+
+const nightImage =
+  "https://raw.githubusercontent.com/USERNAME/REPOSITORY/main/Night-Time%20Cafe.jpg";
+
+/* Cafe Menu Items */
+
+const menuItems = [
+  "Latte",
+  "Espresso",
+  "Green Tea",
+  "Muffin",
+  "Iced Coffee"
+];
+
+/* Menu Options */
+
+const menuOptions = {
+  "Latte": [
+    "Vanilla Latte",
+    "Caramel Latte",
+    "Mocha Latte",
+    "Hazelnut Latte"
+  ],
+
+  "Espresso": [
+    "Single Shot",
+    "Double Shot",
+    "Americano",
+    "Macchiato"
+  ],
+
+  "Green Tea": [
+    "Classic Green Tea",
+    "Jasmine Green Tea",
+    "Honey Green Tea"
+  ],
+
+  "Muffin": [
+    "Blueberry Muffin",
+    "Chocolate Chip Muffin",
+    "Banana Nut Muffin",
+    "Double Chocolate Muffin"
+  ],
+
+  "Iced Coffee": [
+    "Classic Iced Coffee",
+    "Vanilla Iced Coffee",
+    "Caramel Iced Coffee",
+    "Mocha Iced Coffee"
+  ]
+};
+
+/* Create Menu and Dropdowns */
+
+const menuList = document.getElementById("menu-list");
+
+menuItems.forEach(function(item, index) {
+
+  // Create main menu item
+  const li = document.createElement("li");
+  li.className = "menu-item";
+
+  // Create clickable button
+  const button = document.createElement("button");
+  button.className = "menu-button";
+  button.type = "button";
+  button.setAttribute("aria-expanded", "false");
+
+  // Create menu label
+  const label = document.createElement("span");
+  label.textContent = item;
+
+  // Create dropdown arrow
+  const arrow = document.createElement("span");
+  arrow.className = "menu-arrow";
+  arrow.textContent = "▼";
+  arrow.setAttribute("aria-hidden", "true");
+
+  button.appendChild(label);
+  button.appendChild(arrow);
+
+  // Create dropdown options
+  const optionsList = document.createElement("ul");
+  optionsList.className = "options-list";
+  optionsList.id = "options-" + index;
+
+  button.setAttribute("aria-controls", optionsList.id);
+
+  // Add available options
+  menuOptions[item].forEach(function(option) {
+
+    const optionLi = document.createElement("li");
+    optionLi.textContent = option;
+
+    optionsList.appendChild(optionLi);
+
+  });
+
+  // Open or close dropdown
+  button.addEventListener("click", function() {
+
+    const isOpen = li.classList.toggle("open");
+
+    button.setAttribute("aria-expanded", String(isOpen));
+
+  });
+
+  // Add elements to page
+  li.appendChild(button);
+  li.appendChild(optionsList);
+
+  menuList.appendChild(li);
+
+});
+
+/* Daily Special Generator */
+
+const specialButton = document.getElementById("show-special");
+const display = document.getElementById("daily-special");
+
+specialButton.addEventListener("click", function() {
+
+  // Randomly select a menu category
+  const randomIndex = Math.floor(Math.random() * menuItems.length);
+  const randomCategory = menuItems[randomIndex];
+
+  // Get available options
+  const availableOptions = menuOptions[randomCategory];
+
+  // Randomly select a specific item
+  const randomOptionIndex = Math.floor(Math.random() * availableOptions.length);
+  const randomSpecial = availableOptions[randomOptionIndex];
+
+  // Display selected special
+  display.textContent = `Today's Special: ${randomSpecial}`;
+
+});
+
+/* Day and Night Mode Toggle */
+
+const toggleBtn = document.getElementById("toggle-mode");
+const body = document.body;
+const img = document.getElementById("cafe-img");
+const photoCaption = document.getElementById("photo-caption");
+
+// Set the initial daytime photo
+img.src = dayImage;
+
+// Change mode when button is clicked
+toggleBtn.addEventListener("click", function() {
+
+  // Toggle dark mode
+  body.classList.toggle("dark-mode");
+
+  // Check current mode
+  if (body.classList.contains("dark-mode")) {
+
+    // Show nighttime cafe image
+    img.src = nightImage;
+
+    img.alt = "Inside Ars Cafe at night";
+
+    photoCaption.textContent =
+      "A warm and relaxing atmosphere to enjoy your evening.";
+
+  } else {
+
+    // Show daytime cafe image
+    img.src = dayImage;
+
+    img.alt = "Inside Ars Cafe during the day";
+
+    photoCaption.textContent =
+      "A bright and welcoming place to start your day.";
+
+  }
+
+});
