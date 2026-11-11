@@ -309,7 +309,7 @@ footer {
   color: #806044;
 }
 
-/* Night Mode */
+/* Night Mode Styling */
 
 body.dark-mode {
   background-color: #1c1510;
@@ -417,6 +417,10 @@ body.dark-mode footer {
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
+
     transition-duration: 0.01ms !important;
   }
 }
