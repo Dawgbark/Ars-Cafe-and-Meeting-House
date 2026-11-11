@@ -1,14 +1,11 @@
 
 /* GitHub Cafe Images */
 
-// Replace USERNAME and REPOSITORY
-// with your actual GitHub information.
-
 const dayImage =
-  "https://raw.githubusercontent.com/USERNAME/REPOSITORY/main/Day-Time%20Cafe.jpg";
+  "https://raw.githubusercontent.com/Dawgbark/Ars-Cafe-and-Meeting-House/main/Day-Time%20Cafe.png";
 
 const nightImage =
-  "https://raw.githubusercontent.com/USERNAME/REPOSITORY/main/Night-Time%20Cafe.jpg";
+  "https://raw.githubusercontent.com/Dawgbark/Ars-Cafe-and-Meeting-House/main/Night-Time%20Cafe.png";
 
 /* Cafe Menu Items */
 
@@ -151,7 +148,7 @@ const body = document.body;
 const img = document.getElementById("cafe-img");
 const photoCaption = document.getElementById("photo-caption");
 
-// Set the initial daytime photo
+// Set initial daytime photo
 img.src = dayImage;
 
 // Change mode when button is clicked
