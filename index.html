@@ -1,85 +1,105 @@
 
-<div class="cafe-container">
+<!DOCTYPE html>
+<html lang="en">
 
-  <!-- Cafe Header -->
-  <header>
-    <h1>☕ Ars Cafe and Meeting House</h1>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <p class="tagline">
-      Good Coffee. Great Conversations. A Place to Gather.
-    </p>
+  <title>Ars Cafe and Meeting House</title>
 
-    <p class="cafe-description">
-      Welcome to Ars Cafe and Meeting House!
-      Our cafe is a cozy and welcoming place to enjoy
-      freshly brewed coffee, relax by the fireplace,
-      study, or spend time with friends and family.
-      Whether you are stopping in for your morning
-      coffee or meeting friends in the evening,
-      there is always a place for you at Ars Cafe.
-    </p>
-  </header>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
 
-  <!-- Day and Night Mode Toggle -->
-  <button id="toggle-mode" type="button">
-    Toggle Day/Night Mode
-  </button>
+<body>
 
-  <!-- Cafe Interior Photos -->
-  <section class="cafe-photo-section">
+  <div class="cafe-container">
 
-    <h2>Take a Look Inside</h2>
+    <!-- Cafe Header -->
+    <header>
+      <h1>☕ Ars Cafe and Meeting House</h1>
 
-    <p>
-      Experience the warm and welcoming atmosphere
-      of Ars Cafe during the day and at night!
-    </p>
+      <p class="tagline">
+        Good Coffee. Great Conversations. A Place to Gather.
+      </p>
 
-    <img
-      id="cafe-img"
-      src="https://raw.githubusercontent.com/Dawgbark/Ars-Cafe-and-Meeting-House/main/Day-Time%20Cafe.png"
-      alt="Inside Ars Cafe during the day"
-    >
+      <p class="cafe-description">
+        Welcome to Ars Cafe and Meeting House!
+        Our cafe is a cozy and welcoming place to
+        enjoy freshly brewed coffee, relax by the
+        fireplace, study, or spend time with friends
+        and family. Whether you are stopping in for
+        your morning coffee or meeting friends in
+        the evening, there is always a place for you
+        at Ars Cafe.
+      </p>
+    </header>
 
-    <p id="photo-caption">
-      A bright and welcoming place to start your day.
-    </p>
-
-  </section>
-
-  <!-- Cafe Menu -->
-  <section class="menu">
-
-    <h2>Our Menu</h2>
-
-    <p>Check out some of our customer favorites!</p>
-
-    <ul id="menu-list"></ul>
-
-  </section>
-
-  <!-- Daily Special Generator -->
-  <section class="special-section">
-
-    <h2>☕ Feeling Lucky?</h2>
-
-    <p>
-      Not sure what to order?
-      Let us choose something for you!
-    </p>
-
-    <button id="show-special" type="button">
-      Show Daily Special
+    <!-- Day and Night Mode Button -->
+    <button id="toggle-mode" type="button">
+      Toggle Day/Night Mode
     </button>
 
-    <p id="daily-special" aria-live="polite"></p>
+    <!-- Cafe Interior Photos -->
+    <section class="cafe-photo-section">
 
-  </section>
+      <h2>Take a Look Inside</h2>
 
-  <!-- Footer -->
-  <footer>
-    <p>Ars Cafe and Meeting House</p>
-    <p>Good Coffee. Great Company. ☕</p>
-  </footer>
+      <p>
+        Experience the warm and welcoming atmosphere
+        of Ars Cafe during the day and at night!
+      </p>
 
-</div>
+      <img
+        id="cafe-img"
+        src="./Day-Time%20Cafe.png"
+        alt="Inside Ars Cafe during the day"
+      >
+
+      <p id="photo-caption">
+        A bright and welcoming place to start your day.
+      </p>
+
+    </section>
+
+    <!-- Cafe Menu -->
+    <section class="menu">
+
+      <h2>Our Menu</h2>
+
+      <p>Check out some of our customer favorites!</p>
+
+      <ul id="menu-list"></ul>
+
+    </section>
+
+    <!-- Daily Special -->
+    <section class="special-section">
+
+      <h2>☕ Feeling Lucky?</h2>
+
+      <p>
+        Not sure what to order?
+        Let us choose something for you!
+      </p>
+
+      <button id="show-special" type="button">
+        Show Daily Special
+      </button>
+
+      <p id="daily-special" aria-live="polite"></p>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>Ars Cafe and Meeting House</p>
+      <p>Good Coffee. Great Company. ☕</p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
+
